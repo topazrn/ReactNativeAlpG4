@@ -9,8 +9,9 @@ import ImageComponent from '../atom/Image';
 import axios from 'axios';
 import FavoriteButton from '../atom/FavoriteButton';
 
-const BookDetails = ({id}) => {
-  if (id === undefined) id = 2;
+const BookDetails = ({id, route}) => {
+  
+  if (id === undefined) id = route.params.bookId;
   console.log(id);
   const [details, setDetails] = useState({});
   const UrlGetData =

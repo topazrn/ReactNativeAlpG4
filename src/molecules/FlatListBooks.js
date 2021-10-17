@@ -3,11 +3,13 @@ import { FlatList, StyleSheet, TouchableOpacity, Dimensions } from "react-native
 import TextComponent from "../atom/Text";
 import ImageComponent from "../atom/Image";
 import axios from "axios";
+import { useNavigation } from "@react-navigation/native";
 
 
 const FlatListBooks = () => {
     const [posts, setPosts] = useState([]);
     const UrlGetData = 'https://u73olh7vwg.execute-api.ap-northeast-2.amazonaws.com/staging/book?nim=2201752893';
+    const navigation = useNavigation();
 
     useEffect(() => {
         axios.get(UrlGetData)
@@ -26,12 +28,13 @@ const FlatListBooks = () => {
             data={posts}
             renderItem={({ item, index }) => {
                 return (
-                    <TouchableOpacity style={styles.card}>
+                    <TouchableOpacity style={styles.card} onPress={() => {navigation.navigate('BookDetails', {bookId : item.id})}}>
                         <ImageComponent data={item.img}/>
                         <TextComponent data={item.author} />
                         <TextComponent typeText={'name'} data={item.name} />
                         <TextComponent typeText={'price'} data={item.price} />
                     </TouchableOpacity>
+                    
                 )
             }}
             keyExtractor={(item) => item.id} >
