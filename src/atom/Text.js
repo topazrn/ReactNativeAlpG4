@@ -5,7 +5,7 @@ const TextComponent = (props) => {
 return(
 <Text 
 style={props.typeText === 'name' ? styles.textName : props.typeText === 'price' ? styles.textPrice : ''}
-numberOfLines={2}>
+numberOfLines={props.typeText === 'description' ? 0 : 2}>
     {props.typeText === 'price' ? '$ ' : ''}{props.data}
 </Text>
 )
