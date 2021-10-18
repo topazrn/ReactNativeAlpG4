@@ -3,34 +3,24 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
+  Text,
 } from 'react-native';
 
-const FavoriteButton = () => {
-  const [active, setActive] = useState(false);
-  const onPressHeart = () => {
-    // TODO: save to database first
-    // and then setActive
-    setActive(!active);
-  };
+const FavoriteButton = ({onPressHeart, active}) => {
 
   return (
     <TouchableOpacity onPress={onPressHeart}>
-      <View style={[styles.heart, active ? styles.bgRed : null]} />
+      <Text style={[styles.heart, active ? styles.bgRed : null]} >&#x2764;</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  // TODO: turn heart into an actual heart
-  // shape instead of just circle 
   heart: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: "grey",
+    fontSize: 24
   },
   bgRed: {
-    backgroundColor: "red",
+    backgroundColor: "#D3D3D3",
   }
 });
 

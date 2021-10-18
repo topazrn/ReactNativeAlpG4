@@ -1,0 +1,1 @@
+export const FAVORITE_BOOK_KEY = 'f'

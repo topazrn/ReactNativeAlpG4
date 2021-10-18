@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FlatList, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import TextComponent from "../atom/Text";
 import ImageComponent from "../atom/Image";
-import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 
 
-const FlatListBooks = () => {
-    const [posts, setPosts] = useState([]);
-    const UrlGetData = 'https://u73olh7vwg.execute-api.ap-northeast-2.amazonaws.com/staging/book?nim=2201752893';
+const FlatListBooks = ({data}) => {
     const navigation = useNavigation();
-
-    useEffect(() => {
-        axios.get(UrlGetData)
-            .then(res => {
-                setPosts(res.data.products)
-            }).catch(err => {
-                console.log(err)
-            })
-
-    }, [])
 
     return (
         <FlatList
             numColumns={2}
             showsVerticalScrollIndicator={false}
-            data={posts}
+            data={data}
             renderItem={({ item, index }) => {
                 return (
                     <TouchableOpacity style={styles.card} onPress={() => {navigation.navigate('BookDetails', {bookId : item.id})}}>
