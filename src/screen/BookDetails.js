@@ -39,15 +39,18 @@ const BookDetails = ({id, route}) => {
       isExistFav()
     } catch (error) {
       console.log(error)
+      throw error
     }
   }, [details.name])
 
   const isExistFav = async() => {
     const existingFav = JSON.parse(await AsyncStorage.getItem(FAVORITE_BOOK_KEY))
-    let isFav = existingFav.filter(obj => {return obj.id === details.id})
-    if (isFav.length > 0){
-      setActive(true)
-    }
+      if(existingFav != null){
+        let isFav = existingFav.filter(obj => {return obj.id === details.id})
+        if (isFav.length > 0){
+          setActive(true)
+        }
+      }
   }
 
   const onPressHeart = async () => {
