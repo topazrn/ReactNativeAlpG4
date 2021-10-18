@@ -1,1 +1,1 @@
-export const FAVORITE_BOOK_KEY = 'f'
+export const FAVORITE_BOOK_KEY = 'favorite'
