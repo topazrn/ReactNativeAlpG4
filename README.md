@@ -12,3 +12,10 @@
         - Menyempurnakan Button untuk mem-favorite buku
     - William Susanto ([eustion](https://github.com/eustion))
         - Membuat Search Bar untuk mencari buku
+2. Penjelasan singkat mengenai aplikasi (seperti fungsi dan tujuan, fitur, third-parties yang digunakan, credit atas resource yang digunakan)
+3. Script yang dapat digunakan untuk menjalankan project
+    ```sh
+    npm install
+    npm run android
+    ```
+4. Jika ada, tuliskan kendala yang dihadapi saat mengerjakan project (opsional)
