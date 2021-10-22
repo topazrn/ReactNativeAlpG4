@@ -10,9 +10,14 @@
     - Vincentia Graciella Octaviana ([vincentiachen](https://github.com/vincentiachen))
         - Menyempurnakan Screen Navigation
         - Menyempurnakan Button untuk mem-favorite buku
+        - Membuat fitur Favorite book
     - William Susanto ([eustion](https://github.com/eustion))
         - Membuat Search Bar untuk mencari buku
 2. Penjelasan singkat mengenai aplikasi (seperti fungsi dan tujuan, fitur, third-parties yang digunakan, credit atas resource yang digunakan)
+    Aplikasi ini merupakan katalog buku online. Pengguna dapat melihat kumpulan buku-buku dan detail buku yang tersedia. Pengguna juga dapat menambahkan buku yang mereka sukai ke dalam list favorite nya. Tersedia juga fitur search pada aplikasi untuk memudahkan pengguna dalam mencari buku yang sesuai dengan keinginannya.
+    Credits: - https://u73olh7vwg.execute-api.ap-northeast-2.amazonaws.com/staging/book?nim=2201752893
+             - https://github.com/yugabyte/yugastore/blob/master/models/sample_data.json
+
 3. Script yang dapat digunakan untuk menjalankan project
     ```sh
     npm install
